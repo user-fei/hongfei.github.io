@@ -62,7 +62,65 @@ $(function(){
 });
 </script>
 <!--banner结束-->
+<div id="img" style="position: absolute;z-index:999;"onMouseOver="clearInterval(interval)" onMouseOut="interval = setInterval('changePos()', delay)"> 
+	<a href="#" target="_blank" style="display:block;width:270px;height:80px;background:#6CC906;color:white;line-height:80px;text-align:center;font-size:20px;"> 
+	联系电话：400-150-0351
+	</a> 
+	<span style="CURSOR:hand;color:black;font-weight:bold" onClick="clearInterval(interval);img.style.visibility = 'hidden'">关闭</span> 
+	</div> 
 
+	<script type="text/javascript"> 
+	var xPos = 20; 
+	var yPos = document.body.clientHeight; 
+	var step = 1; 
+	var delay = 30; 
+	var height = 30; 
+	var Hoffset = 0; 
+	var Woffset = 0; 
+	var yon = 0; 
+	var xon = 0; 
+	var pause = true; 
+	var interval; 
+	img.style.top = yPos; 
+	function changePos() { 
+	width = document.body.clientWidth; 
+	height = document.body.clientHeight; 
+	Hoffset = img.offsetHeight; 
+	Woffset = img.offsetWidth; 
+	img.style.left = xPos + document.body.scrollLeft +"px"; 
+	img.style.top = yPos + document.body.scrollTop +"px"; 
+	if (yon) { 
+	yPos = yPos + step; 
+	}else { 
+	yPos = yPos - step; 
+	} 
+	if (yPos < 0) { 
+	yon = 1; 
+	yPos = 0; 
+	} 
+	if (yPos >= (height - Hoffset)) { 
+	yon = 0; 
+	yPos = (height - Hoffset); 
+	} 
+	if (xon) { 
+	xPos = xPos + step; 
+	}else { 
+	xPos = xPos - step; 
+	} 
+	if (xPos < 0) { 
+	xon = 1; 
+	xPos = 0; 
+	} 
+	if (xPos >= (width - Woffset)) { 
+	xon = 0; 
+	xPos = (width - Woffset); 
+	} 
+	} 
+	function start() { 
+	interval = setInterval('changePos()', delay); 
+	} 
+	start(); 
+	</script> 
 <!--首页关于我们开始-->
 <div class="about">
 	<div class="aboutMain">
