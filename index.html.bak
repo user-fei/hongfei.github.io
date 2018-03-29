@@ -11,14 +11,22 @@
 <script type="text/javascript" src="public/js/donghua.js"></script>
 
 <link rel="stylesheet" href="public/css/global.css" />
+<style>
+p{text-indent:2em;}
+li {list-style-type:none;}
+a{text-decoration:none}
+</style>
 </head>
 <body>
 
 <!--顶部开始-->
 <div class="top">
 	<div class="topMain">
-    	<div class="logo" style="width:380px;"><a href="#"><img src="public/images/logo.jpg" style="width:80px;"/>
-		<span style="display:block;float:right;height:90px;line-height:90px;font-size:20px;">山西开源秉盛环保科技有限公司</span></a></div>
+    	<div class="logo" style="width:350px;"><a href="#">
+		<img src="public/images/logo.jpg" style="width:80px;"/>
+		<span style="display:block;float:right;height:90px;line-height:90px;font-size:20px;">山西开源秉盛环保科技有限</span>
+		</a>
+		</div>
         <ul>
         	<li><a href="index.html">网站首页</a></li>
             <li><a href="关于我们.html">关于我们</a></li>
@@ -26,7 +34,7 @@
             
             <li><a href="人才招聘.html">人才招聘</a></li>
             <li><a href="留言反馈.html">留言反馈</a></li>
-            <li><a href="关于我们.html">联系我们</a></li>
+            <li><a href="联系我们.html">联系我们</a></li>
         </ul>
         <div class="clearfix"></div>
     </div>
@@ -55,7 +63,68 @@ $(function(){
 });
 </script>
 <!--banner结束-->
+<div id="img" style="position: absolute;z-index:999;"onMouseOver="clearInterval(interval)" onMouseOut="interval = setInterval('changePos()', delay)"> 
+	
+	<img src="public/images/kf.jpg" width="150px" height="120px" style="float:left;"/>
+	<span href="#" target="_blank" style="display:block;float:left;width:270px;height:120px;background:#6CC906;color:white;line-height:120px;text-align:center;font-size:20px;"> 
+	
+	联系电话：400-150-0351
+	</span> 
+	<span style="CURSOR:hand;color:black;font-weight:bold" onClick="clearInterval(interval);img.style.visibility = 'hidden'">关闭</span> 
+	</div> 
 
+	<script type="text/javascript"> 
+	var xPos = 20; 
+	var yPos = $(window).height(); 
+	var step = 1; 
+	var delay = 30; 
+	var height = 30; 
+	var Hoffset = 0; 
+	var Woffset = 0; 
+	var yon = 0; 
+	var xon = 0; 
+	var pause = true; 
+	var interval; 
+	img.style.top = yPos; 
+	function changePos() { 
+	width = $(window).width(); 
+	height = $(window).height(); 
+	Hoffset = img.offsetHeight; 
+	Woffset = img.offsetWidth; 
+	img.style.left = xPos + document.body.scrollLeft +"px"; 
+	img.style.top = yPos + document.body.scrollTop +"px"; 
+	if (yon) { 
+	yPos = yPos + step; 
+	}else { 
+	yPos = yPos - step; 
+	} 
+	if (yPos < 0) { 
+	yon = 1; 
+	yPos = 0; 
+	} 
+	if (yPos >= (height - Hoffset)) { 
+	yon = 0; 
+	yPos = (height - Hoffset); 
+	} 
+	if (xon) { 
+	xPos = xPos + step; 
+	}else { 
+	xPos = xPos - step; 
+	} 
+	if (xPos < 0) { 
+	xon = 1; 
+	xPos = 0; 
+	} 
+	if (xPos >= (width - Woffset)) { 
+	xon = 0; 
+	xPos = (width - Woffset); 
+	} 
+	} 
+	function start() { 
+	interval = setInterval('changePos()', delay); 
+	} 
+	start(); 
+	</script> 
 <!--首页关于我们开始-->
 <div class="about">
 	<div class="aboutMain">
@@ -64,15 +133,12 @@ $(function(){
         </div>
         <div class="aboutcon">
         	<div class="aboiutcontent">
-            	　山西开源秉盛环保科技有限公司是一家专注于节能环保新能源利用的环保工程公司，总部设立在太原市小店区高新区创业街27号 时代广场，公司技术和销售团队实力雄厚，将在未来10年内打造山西省"煤改电、光变电"的实力最大，技术最好，服务最强的团队。<br /><br />
+        <p>山西开源秉盛环保科技有限公司,创立于2017年，注册资金1000万，总部设立在太原市小店区高新区创业街27号时代广场2103室，是山西省一家以太阳能光伏发电和煤改电为主要研发对象，集研发、设计、生产、销售、安装和售后为一体的运营服务商。</p>
 
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;经营理念：诚信、勤奋、细心、坚持。<br /><br />　
-    
-    经营范围：学校、医院、酒店、工厂、企业、大棚蔬菜恒温基地、洗浴中心、烘干场所。<br /><br />
-    
-      
-
-	　经营项目类型：空气能热泵采暖、空气能热泵热水、空气能太阳能采暖热水（太空组合）、地源热泵、水源热泵、中央空调和采暖一体机、燃气锅炉、点供建气站。<br /><br />
+		<p>公司总部位于山西的省会城市—太原，致力于打造“一站式”服务的全新商业模式，即向广大客户提供“客户咨询—手续办理—现场勘察—方案设计—施工承包管理—售后服务”一条龙的系统服务。</p>
+		<p>公司已经在山西省多个县（市）建有固定的售后服务网点，真正为用户解决后顾之忧。</p>
+		<p>作为一家新型环保公司，我们公司将一直致力于开源节能，为客户设计最佳新能源方案，同时为客户降低生产生活成本，</p>
+		<p>尽快向小康生活迈进；为了整个社会开源节能，寻找和开拓更多新能源渠道，减少污染物的排放，为整个社会环境做出自己的一份努力和贡献。</p>
             </div>
         	<div class="shipin">
             	
@@ -91,25 +157,28 @@ $(function(){
 <div class="cp">
 	<div class="cpMain">
     	<div class="cptitle"><img src="public/images/cptitle.jpg" /></div>
-        <div class="cpdes">空气能热水器发展至今10多个年头，目前正处于市场步入快速成长期阶段，从前期技术引进到今天的行业推广，空气能热水器以直线递增的速度大幅发展，据估计，全国共有空气源热泵热水器生产企业达400多家。
+        <div class="cpdes">
+	
+		我公司应政府号招大力发展清洁能源产业，逐步从单一的传统能源化工产业向多元、低碳、集成的能源化工产业体系来进行转变，努力塑造低耗高效清洁环保的产业新形象，着力打造绿色低碳的发展竞争新优势，推动能源化工行业的高质量发展。
+		从光伏、空气能等清洁能源出发，与多家优质企业达成战略合作伙伴！生产最优质的产品，为客户推出最放心的产品、一站式解决方案！
+		
 </div>
 		
         <div class="cplist">
         	<div class="cpleft">
-            	<div class="cpleftdes">国内目前最常见的几种叫法：空气源热水器、空气能热水器、空气能热泵热水器、热泵热水器，其中最精确的叫法应是"空气源热泵热水器"。
-   国内的一些行业协会为了统一称呼，统一称为空气能热水器，这个叫法虽不太准确，但比较直观，易于让消费者理解。</div>
+            	<div class="cpleftdes">本公司承接山西境内各类型建筑煤改电项目（空气能）;家庭分布式光伏并网项目的建设以及销售各类一线品牌光伏组件、逆变器、光伏支架等光伏系统所需材料等！</div>
                 <a href="#">更多详情>></a>
             </div>
             <div class="cpright">
             	<ul>
-                	<li><a href="#"><img src="public/images/CP.jpg" width="200" height="140" /></a></li>
-                    <li><a href="#"><img src="public/images/CP.jpg" width="200" height="140" /></a></li>
-                    <li><a href="#"><img src="public/images/CP.jpg" width="200" height="140" /></a></li>
-                    <li><a href="#"><img src="public/images/CP.jpg" width="200" height="140" /></a></li>
-                    <li><a href="#"><img src="public/images/CP.jpg" width="200" height="140" /></a></li>
-                    <li><a href="#"><img src="public/images/CP.jpg" width="200" height="140" /></a></li>
-                    <li><a href="#"><img src="public/images/CP.jpg" width="200" height="140" /></a></li>
-                    <li><a href="#"><img src="public/images/CP.jpg" width="200" height="140" /></a></li>
+                	<li><a href="#"><img src="public/images/111.jpg" width="200" height="140" /></a></li>
+                    <li><a href="#"><img src="public/images/222.jpg" width="200" height="140" /></a></li>
+                    <li><a href="#"><img src="public/images/333.png" width="200" height="140" /></a></li>
+                    <li><a href="#"><img src="public/images/444.png" width="200" height="140" /></a></li>
+                    <li><a href="#"><img src="public/images/555.jpg" width="200" height="140" /></a></li>
+                    <li><a href="#"><img src="public/images/666.jpg" width="200" height="140" /></a></li>
+                    <li><a href="#"><img src="public/images/777.png" width="200" height="140" /></a></li>
+                    <li><a href="#"><img src="public/images/888.png" width="200" height="140" /></a></li>
                 </ul>
             </div>
         </div>
@@ -145,20 +214,24 @@ $(function(){
           <div class="newright">
             	<ul>
                 	<li>
-                    	<div class="newrtitle"><a href="#">新一代空气能热水器，更安全舒适的洗浴体验</a></div>
-                        <p>随着气温急剧下降，热水器的使用率节节攀升。热水器，大家都不陌生，家家户户必备的生活用品，但你也许不知道，热水器正成为我们生活中的安全杀手...</p>
+                    	<div class="newrtitle"><a href="http://kb.kkyuyin.com/item/38e74f15dba15cea3e064bbdb177f3d9.html?from=smsc&uc_param_str=dnntnwvepffrgibijbpr">
+						空气能，即空气中所蕴含的低品位热能，又称空气源。</a></div>
+                        <p>现在常说的“空气能”是一类产品的简称。其实是指“空气能热水机”，也称“空气能热水器”、“ 空气源热水器”、“空气能热泵热水器”、“ 空气源热泵热水器”、“ 热泵热水器”...</p>
                     </li>
                     <li>
-                    	<div class="newrtitle"><a href="#">四大因素保障热泵行业未来发展</a></div>
-                        <p>空气能热水产品的应用，目前主要集中在南方市场，但随着煤改电后时代的到来，北方空气能热泵的普及以及替代型空气能采暖和热水等多功能产品的应用，热水市场逐步从南方向北方扩散...</p>
+                    	<div class="newrtitle"><a href="https://mp.weixin.qq.com/s?__biz=MzA5NzcwNzkxMw==&mid=2650393640&idx=1&sn=826d328b3c539f258eb9dbb7944da25e&chksm=8891decebfe657d89331004d99a28f54eb922cd114cbd62dcb486b05e9e4001ca9d47e29669d&mpshare=1&scene=24&srcid=01029Yn71SnsdQK9A2IzFgsw#rd">
+						理论派+实践派，教你彻底学会采暖系统水泵的计算和选型！</a></div>
+                        <p>采暖系统水泵的选型，在我们的微信群里大概被问了10000遍了。有人想知道选型过程，有人就想知道个结果。今天，我们把水泵选型分为“理论派”和“实践派”两篇文章来给大家“科普”...</p>
                     </li>
                     <li>
-                    	<div class="newrtitle"><a href="#">实力助阵"煤改电"政策，让暖传万家</a></div>
-                        <p>苍穹之下，如何有效治理雾霾已成民生发展之重点。随着"煤改电"的大力实施推行，雾霾治理成效明显，以北京为例，2017年PM2.5的平均浓度比去年下降了20.5%...</p>
+                    	<div class="newrtitle"><a href="https://mp.weixin.qq.com/s?__biz=MzA5NzcwNzkxMw==&mid=2650391473&idx=1&sn=17d3ec449d8990ab9f6c88f932f3c772&mpshare=1&scene=24&srcid=1218YTF4STl9T1ER8pIZW9fD#rd">
+						地暖空调系统中，水泵选型都有哪些学问？</a></div>
+                        <p>在地暖空调系统中，水泵的选型要考虑哪些问题?采暖末端和制冷末端是共用一个水泵还是分开用比较好?……在本刊杂志的微信群里，经常有经销商咨询相关问题...</p>
                     </li>
                     <li>
-                    	<div class="newrtitle"><a href="#">空气能采暖伴你舒适"度冬末入初春"</a></div>
-                        <p>春节刚过，国内大部分地区的气温也有所回升，许多人选择在春节期间带上家人一起踏青放松，北方地区的气温也回升到5~6℃以上，暖意融融，逛街的人也多了起来，但据气象台报道...</p>
+                    	<div class="newrtitle"><a href="https://mp.weixin.qq.com/s?__biz=MzA5NzcwNzkxMw==&mid=2650391505&idx=1&sn=0256f73524c8f4684299e267976685e5&chksm=8891d137bfe65821299fd4ac07df74f522328965be69eed983052b48deeea5bbe67eb1f45290&mpshare=1&scene=24&srcid=1220gsY5WIsO7icsXZOeSMFl#rd">
+						11个要点教你选购、安装和维护好采暖缓冲水箱</a></div>
+                        <p>缓冲水箱在系统中重要性越来越为经销商重视，在杂志5月刊里面，我们也重点介绍了缓冲水箱的功能及如何选型大小计算。但对于缓冲水箱，我们不能仅仅只了解他的作用和计算方式...</p>
                     </li>
                 </ul>
             </div>
@@ -188,10 +261,10 @@ $(function(){
 	<div class="hezuoMain">
     	<div class="hztitle"></div>
         <ul>
-        	<li><a href="#"><img src="public/images/XH.jpg" width="200"  height="140"/></a></li>
-            <li><a href="#"><img src="public/images/zy.jpg" width="200"  height="140"/></a></li>
-            <li><a href="#"><img src="public/images/BLT.jpg" width="200"  height="140"/></a></li>
-            <li><a href="#"><img src="public/images/gel.jpg" width="200"  height="140"/></a></li>
+        	<li><a href="#"><img src="public/images/aaa.jpg" width="200"  height="140"/></a></li>
+            <li><a href="#"><img src="public/images/bbb.jpg" width="200"  height="140"/></a></li>
+            <li><a href="#"><img src="public/images/ccc.jpg" width="200"  height="140"/></a></li>
+            <li><a href="#"><img src="public/images/ddd.jpg" width="200"  height="140"/></a></li>
             <li><a href="#"><img src="public/images/SD.jpg" width="200"  height="140"/></a></li>
             <div class="clearfix"></div>
         </ul>
@@ -259,47 +332,7 @@ function cfm_msg(){
 
 <!--底部开始-->
 <div class="foot">
-	<div class="footMain">
-    	<div class="foot1" style="width:360px;">
-        	<div class="foot1title">
-            	联系我们/CONTACT
-            </div>
-            <ul>
-            	<li>联系电话：0351-2752257</li>
-                <li>邮　　编：030000</li>
-                <li>Q Q客服：916485835</li>
-                <li>电子邮箱：916485835@qq.com</li>
-                <li>办公地址: 太原市小店区高新区创业街27号时代广场2103室</li>
-            </ul>
-        </div>
-        <div class="foot2">
-        	<div class="foot1title">
-            	友情链接
-            </div>
-            <ul>
-            	<li><a href="#">格力集团</a></li>
-                <li><a href="#">格力集团</a></li>
-                <li><a href="#">格力集团</a></li>
-                <li><a href="#">格力集团</a></li>
-                <li><a href="#">格力集团</a></li>
-                <li><a href="#">格力集团</a></li>
-                <li><a href="#">格力集团</a></li>
-                <li><a href="#">格力集团</a></li>
-                <li><a href="#">格力集团</a></li>
-                <li><a href="#">格力集团</a></li>
-                <li><a href="#">格力集团</a></li>
-                <li><a href="#">格力集团</a></li>
-               
-
-            </ul>
-        </div>
-        <div class="foot3">
-        	<p class="dilogo"><img src="public/images/dilogo.png" /></p>
-            <p>Copyright ? 2017 山西开源秉盛环保科技有限公司 All Rights Reserved</p>
-            <p>联系电话：0351-2752257　晋ICP备888888号-1</p>
-            <p><a href="#">企业邮箱登录</a>　技术支持：<a href="#">001</a>　</p>
-        </div>
-    </div>
+	<iframe src="foot.html" width="100%" height="100%"></iframe>
 </div>
 <!--底部结束-->
 
